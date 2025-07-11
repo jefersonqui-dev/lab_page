@@ -1,9 +1,10 @@
 import { Component, HostListener, ElementRef } from '@angular/core';
 import { NgIf, NgFor, NgClass } from '@angular/common';
+import { LogoAnimated } from "../logo-animated/logo-animated";
 
 @Component({
   selector: 'app-header',
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, LogoAnimated],
   templateUrl: './header.html',
   styleUrl: './header.css'
 })

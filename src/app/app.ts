@@ -4,11 +4,11 @@ import { Header } from "./shared/components/header/header";
 import { AboutSection } from "./features/home/components/about-section/about-section";
 import { ServicesSection } from "./features/home/components/services-section/services-section";
 import { ContactSection } from "./features/home/components/contact-section/contact-section";
-import { DividierDiagonal } from "./shared/components/dividier-diagonal/dividier-diagonal";
+// import { DividierDiagonal } from "./shared/components/dividier-diagonal/dividier-diagonal";
 
 @Component({
   selector: 'app-root',
-  imports: [Header, HeroSection, AboutSection, ServicesSection, ContactSection, DividierDiagonal],
+  imports: [Header, HeroSection, AboutSection, ServicesSection, ContactSection],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
