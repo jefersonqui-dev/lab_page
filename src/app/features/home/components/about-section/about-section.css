@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fondo */
+  --tw-bg-hero-card: #f3f4f6;
+  --tw-bg-hero-button: #3b82f6;
+  --tw-bg-hero-button-hover: #2563eb;
+  --tw-bg-hero-separator-mobile: #3b82f680;
+  --tw-bg-hero-separator: #64ffda70;
+}
+.about-section {
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+}
+
+/* Animación de entrada para las tarjetas */
+.feature-card {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Efecto hover mejorado para las tarjetas */
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+} 

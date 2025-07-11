@@ -1,0 +1,132 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fondo */
+  --tw-bg-hero-card: #f3f4f6;
+  --tw-bg-hero-button: #3b82f6;
+  --tw-bg-hero-button-hover: #2563eb;
+  --tw-bg-hero-separator-mobile: #3b82f680;
+  --tw-bg-hero-separator: #64ffda70;
+
+  /* Texto */
+  --tw-text-hero-title: #ccd6f6;
+  --tw-text-hero-subtitle: #8892b0;
+  --tw-text-hero-description: #8892b0;
+  --tw-text-hero-button: #ffffff;
+
+  /* Bordes */
+  --tw-border-hero-card: #e5e7eb;
+  --tw-border-hero-separator: #64ffda50;
+
+  /* Acentos */
+  --tw-accent-hero: #3b82f6;
+
+  /* Fuentes */
+  --tw-font-family-primary: 'Roboto', 'Arial', sans-serif;
+  --tw-font-family-secondary: 'Roboto', 'Arial', sans-serif;
+  --tw-font-family-mono: 'Fira Code', 'Consolas', 'Monaco', monospace;
+  
+  /* Pesos de fuente */
+  --tw-font-weight-light: 300;
+  --tw-font-weight-normal: 400;
+  --tw-font-weight-medium: 500;
+  --tw-font-weight-semibold: 600;
+  --tw-font-weight-bold: 700;
+  --tw-font-weight-extrabold: 800;
+  --tw-font-weight-black: 900;
+  
+  /* Tamaños de fuente */
+  --tw-font-size-xs: 0.75rem;
+  --tw-font-size-sm: 0.875rem;
+  --tw-font-size-base: 1rem;
+  --tw-font-size-lg: 1.125rem;
+  --tw-font-size-xl: 1.25rem;
+  --tw-font-size-2xl: 1.5rem;
+  --tw-font-size-3xl: 1.875rem;
+  --tw-font-size-4xl: 2.25rem;
+  --tw-font-size-5xl: 3rem;
+  --tw-font-size-6xl: 3.75rem;
+}
+
+/* Efecto de brillo en hover para el botón */
+.hero-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+.hero-button:hover::before {
+  left: 100%;
+}
+
+/* Estilos para el efecto de cortina */
+#animatedTitle {
+  position: relative;
+  overflow: hidden;
+}
+
+#animatedTitle.active {
+  animation: curtain-reveal 0.1s ease-out;
+}
+
+@keyframes curtain-reveal {
+  0% {
+    opacity: 0.8;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Efecto de resplandor para caracteres durante el scramble */
+#animatedTitle.active::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, 
+    transparent 0%, 
+    rgba(100, 255, 218, 0.1) 50%, 
+    transparent 100%);
+  animation: curtain-glow 2s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes curtain-glow {
+  0%, 100% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Estilos mínimos para el carrusel */
+
+/* Indicadores del carrusel */
+[data-carousel-slide-to] {
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.2s ease-in-out;
+}
+
+[data-carousel-slide-to]:hover {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+[data-carousel-slide-to][aria-current="true"] {
+  background-color: white;
+}
+
+/* Overlay de texto */
+.bg-gradient-to-t {
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 100%);
+}

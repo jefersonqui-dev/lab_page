@@ -1,0 +1,37 @@
+<section class="py-16 lg:py-24 bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold mb-6">
+                {{ contactContent.title }}
+            </h2>
+            <p class="text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                {{ contactContent.subtitle }}
+            </p>
+            <p class="text-lg text-gray-400 max-w-2xl mx-auto">
+                {{ contactContent.description }}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div *ngFor="let contact of contactContent.contactInfo" 
+                 class="text-center p-8 rounded-2xl bg-gray-800 hover:bg-gray-700 transition-colors duration-300">
+                <div class="text-4xl mb-4">{{ contact.icon }}</div>
+                <h3 class="text-xl font-semibold mb-3">
+                    {{ contact.title }}
+                </h3>
+                <a [href]="contact.link" 
+                   class="text-blue-400 hover:text-blue-300 transition-colors duration-300">
+                    {{ contact.value }}
+                </a>
+            </div>
+        </div>
+        
+        <div class="text-center mt-12">
+            <a href="#"
+               class="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full transition-all duration-300 transform hover:scale-105">
+                Iniciar Proyecto
+                <span class="ml-2">→</span>
+            </a>
+        </div>
+    </div>
+</section> 
