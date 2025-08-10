@@ -1,0 +1,28 @@
+/* Estilos para el contenedor del logo */
+.logo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Estilos para el SVG */
+#kamay {
+  width: 100%;
+  height: auto;
+  max-width: 140px;
+}
+
+/* Estilos iniciales para los paths (serán sobrescritos por GSAP) */
+#kamay path {
+  fill: none;
+  stroke: rgb(100, 255, 218);
+  stroke-width: 1.2px;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  /* Propiedades para mejorar el renderizado y reducir artefactos */
+  shape-rendering: geometricPrecision;
+  vector-effect: non-scaling-stroke;
+  /* Propiedades adicionales para suavizar el trazo */
+  stroke-miterlimit: 4;
+  stroke-opacity: 1;
+}

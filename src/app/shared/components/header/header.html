@@ -1,0 +1,71 @@
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#020c1b]/80 backdrop-blur-xs border-b-[0.5px] border-[rgba(100,255,218,0.4)]">
+    <nav class="mx-auto flex max-w-8xl items-center justify-between p-4 lg:px-6" aria-label="Global">
+      <div class="flex lg:flex-1">
+        <a href="#" class="-m-1.5 p-1.5">
+          <span class="sr-only">Your Company</span>
+          <app-logo-animated></app-logo-animated>
+        </a>
+      </div>
+      <div class="flex lg:hidden">
+        <button type="button" (click)="toggleMobileMenu()" class="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-gray-700">
+          <span class="sr-only">Open main menu</span>
+          <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+          </svg>
+        </button>
+      </div>
+      <div class="hidden lg:flex lg:gap-x-12">
+        <ng-container *ngFor="let item of navItems; let i = index">
+          <a href="#" class="text-[#8892b0] text-sm/6 font-semibold">
+            <span [ngClass]="item.numberColor">{{i + 1}}.</span> {{item.label}}
+          </a>
+        </ng-container>
+      </div>
+      <div class="hidden lg:flex lg:flex-1 lg:justify-end">
+        <a
+  href="#"
+  class="relative inline-flex items-center rounded-full bg-[#64ffda] px-2.5 py-0.5 text-sm/6 font-medium text-[#020c1b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#64ffda] transition-all duration-300 hover:scale-105 overflow-hidden group"
+>
+  <span
+    class="absolute left-[-60%] top-0 h-full w-2/3 bg-gradient-to-r from-transparent via-white/40 to-transparent opacity-0 group-hover:opacity-100 group-hover:left-[110%] transition-all duration-500 pointer-events-none"
+  ></span>
+  Log In <span aria-hidden="true">&rarr;</span>
+</a>
+      </div>
+    </nav>
+  </header>
+
+<!-- Mobile menu, positioned outside header to overlay properly -->
+<div *ngIf="isMobileMenuOpen" (click)="$event.stopPropagation()" class="lg:hidden fixed inset-0 z-[100]" role="dialog" aria-modal="true">
+  <!-- Background backdrop -->
+  <div (click)="closeMobileMenu()" class="fixed inset-0 z-[100] bg-black/50"></div>
+  <!-- Mobile menu content -->
+  <div class="fixed inset-0 z-[110] w-full h-full overflow-y-auto bg-[#020c1b]/80 backdrop-blur-xs p-6">
+    <div class="flex items-center justify-between">
+      <a href="#" class="-m-1.5 p-1.5">
+        <span class="sr-only">Your Company</span>
+        <img class="h-5 w-auto" src="assets/images/logo/logo.svg" alt="Logo" />
+      </a>
+      <button type="button" (click)="closeMobileMenu()" class="-m-2.5 rounded-md p-2.5 text-[#64ffda] hover:bg-[rgba(100,255,218,0.1)] transition-colors">
+        <span class="sr-only">Close menu</span>
+        <svg class="size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <div class="mt-8 flow-root">
+      <div class="space-y-6">
+        <div class="space-y-4">
+          <ng-container *ngFor="let item of navItems; let i = index">
+            <a href="#" class="text-[#8892b0] block rounded-lg px-4 py-4 text-lg font-semibold hover:bg-[rgba(100,255,218,0.1)] transition-colors">
+              <span [ngClass]="item.numberColor">{{i + 1}}.</span> {{item.label}}
+            </a>
+          </ng-container>
+        </div>
+        <div class="pt-6 border-t border-[rgba(100,255,218,0.2)]">
+          <a href="#" class="inline-block rounded-full bg-[#64ffda] px-6 py-3 text-base font-medium text-[#020c1b] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#64ffda] transition-all duration-300 hover:scale-105">Log in</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

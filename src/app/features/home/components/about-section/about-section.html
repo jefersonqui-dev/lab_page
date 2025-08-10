@@ -1,0 +1,31 @@
+<section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 lg:px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+                {{ aboutContent.title }}
+            </h2>
+            <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                {{ aboutContent.subtitle }}
+            </p>
+        </div>
+        
+        <div class="text-center mb-12">
+            <p class="text-lg text-gray-700 max-w-4xl mx-auto leading-relaxed">
+                {{ aboutContent.description }}
+            </p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12">
+            <div *ngFor="let feature of aboutContent.features" 
+                 class="text-center p-6 rounded-xl bg-gray-50 hover:bg-gray-100 transition-colors duration-300">
+                <div class="text-4xl mb-4">{{ feature.icon }}</div>
+                <h3 class="text-xl font-semibold text-gray-900 mb-3">
+                    {{ feature.title }}
+                </h3>
+                <p class="text-gray-600">
+                    {{ feature.description }}
+                </p>
+            </div>
+        </div>
+    </div>
+</section> 
