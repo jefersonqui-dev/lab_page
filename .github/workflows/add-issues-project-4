@@ -1,5 +1,5 @@
 
-name: Add Issue to User Project
+name: Add Issues to User Project
 
 on:
   issues:
